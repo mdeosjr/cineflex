@@ -1,0 +1,40 @@
+.sessoes {
+    padding: 0 24px;
+}
+
+.descricaoFilme {
+    height: 117px;
+    padding-left: 10px;
+    
+    background: #DFE6ED;
+    border: 1px solid #9EADBA;
+
+    display: flex;
+    align-items: center;
+}
+
+.borda {
+    width: 64px;
+    height: 89px;
+    margin-right: 14px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.descricaoFilme img {
+    width: 48px;
+    height: 72px;
+}
+
+.descricaoFilme p {
+    font: normal 26px Roboto;
+    line-height: 30px;
+
+    color: #293845;
+}

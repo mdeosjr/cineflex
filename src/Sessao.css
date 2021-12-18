@@ -1,0 +1,34 @@
+.sessao {
+    margin-bottom: 23px;
+}
+
+.dias {
+    font: normal 20px Roboto;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+
+    color: #293845;
+}
+
+.horarios {
+    display: flex;
+    gap: 8px;
+    margin-top: 23px;
+}
+
+.hora {
+    width: 83px;
+    height: 43px;
+
+    background: #E8833A;
+    border-radius: 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font: normal 18px Roboto;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
