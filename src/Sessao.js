@@ -7,7 +7,7 @@ function Sessao({diaSemana, data, sessoes}) {
             <span className="dias">{diaSemana} - {data}</span>
             <div className="horarios">
                 {sessoes.map(horas => 
-                    <Link to={`/assentos/${horas.id}`}>
+                    <Link to={`/assentos/${horas.id}`} key={horas.id}>
                         <div className="hora">{horas.name}</div>
                     </Link>)
                 }

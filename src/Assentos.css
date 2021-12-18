@@ -1,0 +1,27 @@
+.assentos {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0 24px;
+    gap: 18px 7px;
+
+    margin-bottom: 30px;
+}
+
+.assento {
+    width: 26px;
+    height: 25px;
+
+    border: 1px solid #000000;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font: normal 11px Roboto;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+
+    color: #000000;
+}

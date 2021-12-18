@@ -19,19 +19,17 @@ function Sessoes() {
         })
     }, []);
 
-    console.log(rodape)
-    
     return (
         <>
-            <h2 className="titulo">Selecione o horário</h2>
+            <span className="titulo">Selecione o horário</span>
             <div className="sessoes">
-                {sessao.map(info => <Sessao diaSemana={info.weekday} data={info.date} sessoes={info.showtimes}/>)}
+                {sessao.map(info => <Sessao diaSemana={info.weekday} data={info.date} sessoes={info.showtimes} key={info.id}/>)}
             </div>
             {(!rodape) ? <span>Carregando...</span> 
             : 
             <div className="descricaoFilme">
                 <div className="borda">
-                    <img src={rodape.posterURL} alt=""></img>
+                    <img src={rodape.posterURL} alt={rodape.title}></img>
                 </div>
                 <p>{rodape.title}</p>
             </div>
