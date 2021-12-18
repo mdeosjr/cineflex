@@ -1,0 +1,28 @@
+.filmes {
+    display: flex;
+    flex-direction: column;
+}
+
+.listaFilmes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px 30px;
+}
+
+.titulo {
+    height: 110px;
+
+    font: normal 24px Roboto;
+    letter-spacing: 0.04em;
+    line-height: 28px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: #293845;
+}

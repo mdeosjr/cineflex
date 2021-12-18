@@ -1,20 +1,11 @@
-import styled from 'styled-components'
+import './Header.css'
 
-const Header = styled.div`
-  width: 375px;
-  height: 67px;
-
-  background: #C3CFD9;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  h1 {
-    font: normal 34px Roboto;
-    line-height: 40px;
-    color: #E8833A;
-  }
-`
+function Header() {
+  return (
+    <header className="header">
+       <h1>CINEFLEX</h1>
+    </header>
+  )
+}
 
 export default Header;

@@ -1,0 +1,16 @@
+.header {
+    width: 375px;
+    height: 67px;
+
+    background: #C3CFD9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    font: normal 34px Roboto;
+    line-height: 40px;
+    color: #E8833A;
+}
