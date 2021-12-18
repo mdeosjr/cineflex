@@ -1,11 +1,16 @@
+.telaAssentos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .assentos {
     display: flex;
     flex-wrap: wrap;
 
     padding: 0 24px;
     gap: 18px 7px;
-
-    margin-bottom: 30px;
 }
 
 .assento {
@@ -24,4 +29,97 @@
     letter-spacing: 0.04em;
 
     color: #000000;
+}
+
+.legenda {
+    display: flex; 
+    
+    margin-top: 16px;
+    margin-bottom: 40px;
+    gap: 0 24px;
+    
+    font: normal 13px Roboto;
+    line-height: 15px;
+    letter-spacing: -0.013em;
+
+    color: #4E5A65;
+}
+
+.caixaAssento {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.assento.selecionado {
+    background: #8DD7CF;
+    border: 1px solid #1AAE9E;
+    border-radius: 17px;
+}
+
+.assento.true {
+    background: #C3CFD9;
+    border: 1px solid #7B8B99;
+    border-radius: 17px;
+}
+
+.assento.false {
+    background: #FBE192;
+    border: 1px solid #F7C52B;
+    border-radius: 17px;
+}
+
+.infosClientes {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px 0;
+}
+
+.tituloInput {
+    font: normal 18px Roboto;
+    line-height: 21px;
+
+    color: #293845;
+}
+
+input {
+    all: unset;
+    width: 327px;
+    height: 51px;
+
+    background: #FFFFFF;
+    border: 1px solid #D5D5D5;
+    border-radius: 3px;
+}
+
+input::placeholder {
+    font: italic 18px Roboto;
+    line-height: 21px;
+
+    padding-left: 16px;
+
+    color: #AFAFAF;
+}
+
+input:last-child {
+    margin-bottom: 57px;
+}
+
+.reserva {
+    width: 225px;
+    height: 42px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+    
+    text-align: center;
+
+    background: #E8833A;
+    border-radius: 3px;
+
+    font: normal 18px Roboto;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+
+    color: #FFFFFF;
 }

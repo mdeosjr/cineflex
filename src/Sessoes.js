@@ -27,12 +27,12 @@ function Sessoes() {
             </div>
             {(!rodape) ? <span>Carregando...</span> 
             : 
-            <div className="descricaoFilme">
+            <footer className="descricaoFilme">
                 <div className="borda">
                     <img src={rodape.posterURL} alt={rodape.title}></img>
                 </div>
                 <p>{rodape.title}</p>
-            </div>
+            </footer>
             } 
         </>
     )

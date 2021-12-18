@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Assento from "./Assento.js";
 import "./Assentos.css";
 
 function Assentos() {
@@ -16,22 +17,41 @@ function Assentos() {
             setAssentos(resposta.data.seats);
         })
     }, []);
-    console.log(rodape);
 
     return (
         <>
+        <div className="telaAssentos">
             <span className="titulo">Selecione o(s) assento(s)</span>
             <div className="assentos">
-                {assentos.map(assento => <div className="assento">{assento.name}</div>)}
+                <Assento idSessao={idSessao} assentos={assentos}/>
             </div>
             <div className="legenda">
-                <div className="selecionado"></div>
-                <div className="disponivel"></div>
-                <div className="indisponivel"></div>
+                <div className="caixaAssento">                                                                                                      
+                    <div className="assento selecionado"></div>
+                    <span>Selecionado</span>
+                </div>
+                <div className="caixaAssento">
+                    <div className="assento true"></div>
+                    <span>Disponível</span>
+                </div>
+                <div className="caixaAssento">
+                    <div className="assento false"></div>
+                    <span>Indisponível</span>
+                </div>
             </div>
+            <div className="infosClientes">
+                <span className="tituloInput">Nome do comprador:</span>
+                <input placeholder="Digite seu nome..."></input>
+                <span className="tituloInput">CPF do comprador:</span>
+                <input placeholder="Digite seu CPF..."></input>
+            </div>
+            <div className="reserva">
+                <span>Reservar assento(s)</span>
+            </div>
+        </div>
             {(!rodape) ? <span>Carregando...</span> 
             : 
-            <div className="descricaoFilme">
+            <footer className="descricaoFilme">
                 <div className="borda">
                     <img src={rodape.movie.posterURL} alt={rodape.movie.title}></img>
                 </div>
@@ -39,7 +59,7 @@ function Assentos() {
                     <p>{rodape.movie.title}</p>
                     <p>{rodape.day.weekday} - {rodape.day.date}</p>
                 </div>
-            </div>
+            </footer>
             } 
         </>
     )
