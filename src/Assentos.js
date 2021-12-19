@@ -18,12 +18,14 @@ function Assentos() {
         })
     }, []);
 
+    console.log(assentos);
+
     return (
         <>
         <div className="telaAssentos">
             <span className="titulo">Selecione o(s) assento(s)</span>
             <div className="assentos">
-                <Assento idSessao={idSessao} assentos={assentos}/>
+                {assentos.map(assento => <Assento livre={assento.isAvailable} numero={assento.name} key={assento.id}/>)}
             </div>
             <div className="legenda">
                 <div className="caixaAssento">                                                                                                      

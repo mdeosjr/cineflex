@@ -1,16 +1,20 @@
 .sessoes {
-    padding: 0 24px;
+    padding: 67px 24px 120px;
 }
 
 .descricaoFilme {
+    width: 375px;
     height: 117px;
-    padding-left: 10px;
+    padding: 10px;
     
     background: #DFE6ED;
     border: 1px solid #9EADBA;
 
     display: flex;
     align-items: center;
+
+    position: fixed;
+    bottom: 0;
 }
 
 .borda {
@@ -33,7 +37,7 @@
 }
 
 .descricaoFilme p {
-    font: normal 26px Roboto;
+    font: normal 22px Roboto;
     line-height: 30px;
 
     color: #293845;

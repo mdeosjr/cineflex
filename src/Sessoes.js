@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import Sessao from "./Sessao.js";
 import "./Sessoes.css";
 
-
 function Sessoes() {
     const { idFilme } = useParams();
     const [sessao, setSessao] = useState([]);
@@ -21,9 +20,16 @@ function Sessoes() {
 
     return (
         <>
-            <span className="titulo">Selecione o horário</span>
             <div className="sessoes">
-                {sessao.map(info => <Sessao diaSemana={info.weekday} data={info.date} sessoes={info.showtimes} key={info.id}/>)}
+                <span className="titulo">Selecione o horário</span>
+                {sessao.map(info => 
+                    <Sessao 
+                        diaSemana={info.weekday} 
+                        data={info.date} 
+                        sessoes={info.showtimes} 
+                        key={info.id} 
+                    />
+                )}
             </div>
             {(!rodape) ? <span>Carregando...</span> 
             : 

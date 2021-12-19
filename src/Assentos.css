@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 67px 0 120px;
 }
 
 .assentos {
@@ -87,17 +89,18 @@ input {
     all: unset;
     width: 327px;
     height: 51px;
+    padding-left: 16px;
 
     background: #FFFFFF;
     border: 1px solid #D5D5D5;
     border-radius: 3px;
+
+    font: normal 18px Roboto;
 }
 
 input::placeholder {
     font: italic 18px Roboto;
     line-height: 21px;
-
-    padding-left: 16px;
 
     color: #AFAFAF;
 }

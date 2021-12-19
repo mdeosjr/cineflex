@@ -1,6 +1,8 @@
 .filmes {
     display: flex;
     flex-direction: column;
+
+    padding-top: 67px;
 }
 
 .listaFilmes {
