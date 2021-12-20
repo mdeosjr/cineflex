@@ -44,5 +44,7 @@
     position: fixed;
     left: 22px;
     top: 15px;
+
+    cursor: pointer;
 }
 
