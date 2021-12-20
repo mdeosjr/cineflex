@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react"
 import Sessao from "../Sessao";
 import loading from "../../assets/loading.gif";
-import botaoVoltar from "../../assets/turn.png";
 import "./style.css";
 
 function Sessoes() {
