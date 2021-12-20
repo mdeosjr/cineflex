@@ -55,6 +55,10 @@ input {
     font: normal 18px Roboto;
 }
 
+input:focus {
+    border: 1px solid #000000;
+}
+
 input::placeholder {
     font: italic 18px Roboto;
     line-height: 21px;
