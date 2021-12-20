@@ -55,6 +55,7 @@ function Assentos() {
 
     return (
         <>
+            <button className="botaoVoltar" onClick={() => navigate(-1)} alt="Voltar">Voltar</button>
             <div className="telaAssentos">
                 <span className="titulo">Selecione o(s) assento(s)</span>
                 <div className="assentos">

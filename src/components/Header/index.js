@@ -3,11 +3,11 @@ import './style.css';
 
 function Header() {
   return (
-    <Link to={`/`}>
-      <header className="header">
-          <h1>CINEFLEX</h1>
-      </header>
-    </Link> 
+    <header className="header">
+      <Link to={`/`}>
+        <h1>CINEFLEX</h1>
+      </Link>
+    </header>
   )
 }
 
