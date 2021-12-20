@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
 import Filme from './Filme.js';
 import "./Filmes.css";
 

@@ -2,21 +2,27 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
 import Sessao from "./Sessao.js";
+import loading from "./assets/loading.gif";
 import "./Sessoes.css";
 
-function Sessoes() {
+function Sessoes({rodapeSessoes, setRodapeSessoes}) {
     const { idFilme } = useParams();
     const [sessao, setSessao] = useState([]);
-    const [rodape, setRodape] = useState();
 
     useEffect(() => {
         const promessa = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/movies/${idFilme}/showtimes`)
 
         promessa.then(resposta => {
-            setRodape(resposta.data)
+            setRodapeSessoes(resposta.data)
             setSessao(resposta.data.days);
         })
     }, []);
+
+    if (sessao.length === 0) {
+        return (
+            <img className="loading" src={loading} alt="Carregando..."></img> 
+        )
+    }
 
     return (
         <>
@@ -31,15 +37,12 @@ function Sessoes() {
                     />
                 )}
             </div>
-            {(!rodape) ? <span>Carregando...</span> 
-            : 
             <footer className="descricaoFilme">
                 <div className="borda">
-                    <img src={rodape.posterURL} alt={rodape.title}></img>
+                    <img src={rodapeSessoes.posterURL} alt={rodapeSessoes.title}></img>
                 </div>
-                <p>{rodape.title}</p>
+                <p>{rodapeSessoes.title}</p>
             </footer>
-            } 
         </>
     )
 }
