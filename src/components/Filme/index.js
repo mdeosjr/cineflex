@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import "./Filme.css";
+import "./style.css";
 
 function Filme({posterURL, title, id}) {
   return (

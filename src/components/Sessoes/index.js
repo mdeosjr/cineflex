@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
-import Sessao from "./Sessao.js";
-import loading from "./assets/loading.gif";
-import "./Sessoes.css";
+import Sessao from "../Sessao";
+import loading from "../../assets/loading.gif";
+import "./style.css";
 
 function Sessoes() {
     const { idFilme } = useParams();

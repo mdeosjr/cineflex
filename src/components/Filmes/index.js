@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Filme from './Filme.js';
-import "./Filmes.css";
+import Filme from '../Filme';
+import "./style.css";
 
 function Filmes() {
     const [filmes, setFilmes] = useState([]);

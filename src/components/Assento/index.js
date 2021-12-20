@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import "./Assento.css";
+import "./style.css";
 
 function Assento({livre, numero, assentos}) {
     const [reserva, setReserva] = useState(livre)

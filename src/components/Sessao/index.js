@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './Sessao.css';
+import './style.css';
 
 function Sessao({diaSemana, data, sessoes}) {
     return (

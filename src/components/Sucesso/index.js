@@ -1,5 +1,5 @@
-import "./Sucesso.css";
 import { Link, useLocation } from 'react-router-dom';
+import "./style.css";
 
 function Sucesso() {
     const {state} = useLocation();

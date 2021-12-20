@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Assento from "./Assento.js";
-import loading from "./assets/loading.gif";
-import "./Assentos.css";
+import Assento from "../Assento";
+import loading from "../../assets/loading.gif";
+import "./style.css";
 
 function Assentos() {
     const { idSessao } = useParams();
