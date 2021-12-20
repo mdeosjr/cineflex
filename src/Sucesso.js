@@ -1,20 +1,35 @@
 import "./Sucesso.css";
-import loading from "./assets/loading.gif";
+import { Link, useLocation } from 'react-router-dom';
 
-function Sucesso({rodapeAssentos}) {
-    if (rodapeAssentos.length === 0) {
-        return (
-            <img className="loading" src={loading} alt="Carregando..."></img> 
-        )
-    }
-
+function Sucesso() {
+    const {state} = useLocation();
+    
     return (
         <div className="sucesso">
-            <h1 className="subtitulos">Filme e sessão</h1>
-                <p className="infoSucesso">{rodapeAssentos.movie.title}</p>
-                <p className="infoSucesso">{rodapeAssentos.day.weekday} {rodapeAssentos.day.date}</p>
-            <h1 className="subtitulos">Ingressos</h1>
-            <h1 className="subtitulos">Comprador</h1>
+            <span className="titulo">Pedido feito <br/>com sucesso!</span>
+            <div className="infosFinalizar">
+                <div className="caixaInfo">
+                    <h1 className="subtitulos">Filme e sessão</h1>
+                    <p className="infoSucesso">{state.titulo}</p>
+                    <p className="infoSucesso">{state.data} {state.hora}</p>
+                </div>
+                <div className="caixaInfo">
+                    <h1 className="subtitulos">Ingressos</h1>
+                    {state.numeroAssento.map(assento => 
+                        <p key={assento} className="infoSucesso">Assento {assento}</p>
+                    )}
+                </div>
+                <div className="caixaInfo">
+                    <h1 className="subtitulos">Comprador</h1>
+                    <p className="infoSucesso">Nome: {state.nome}</p>
+                    <p className="infoSucesso">CPF: {state.CPF}</p>
+                </div>
+            </div>
+            <Link to="/">
+                <div className="reserva">
+                    <span>Voltar pra Home</span>
+                </div>
+            </Link>
         </div>
     );
 }

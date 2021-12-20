@@ -1,0 +1,44 @@
+.assento {
+    width: 26px;
+    height: 25px;
+
+    border: 1px solid #000000;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font: normal 11px Roboto;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+
+    color: #000000;
+
+    cursor: pointer;
+}
+
+.caixaAssento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.assento.selecionado {
+    background: #8DD7CF;
+    border: 1px solid #1AAE9E;
+    border-radius: 17px;
+}
+
+.assento.true {
+    background: #C3CFD9;
+    border: 1px solid #7B8B99;
+    border-radius: 17px;
+}
+
+.assento.false {
+    background: #FBE192;
+    border: 1px solid #F7C52B;
+    border-radius: 17px;
+}

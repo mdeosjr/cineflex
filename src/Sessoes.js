@@ -5,9 +5,10 @@ import Sessao from "./Sessao.js";
 import loading from "./assets/loading.gif";
 import "./Sessoes.css";
 
-function Sessoes({rodapeSessoes, setRodapeSessoes}) {
+function Sessoes() {
     const { idFilme } = useParams();
     const [sessao, setSessao] = useState([]);
+    const [rodapeSessoes, setRodapeSessoes] = useState([]);
 
     useEffect(() => {
         const promessa = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/movies/${idFilme}/showtimes`)

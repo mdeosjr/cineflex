@@ -1,5 +1,14 @@
 .sucesso {
-    padding: 67px 29px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 67px 29px 0;
+}
+
+.infosFinalizar {
+    margin-bottom: 80px;
 }
 
 .sucesso .titulo, .sucesso .subtitulos {
@@ -25,4 +34,16 @@
     position: fixed;
     top: 50%;
     right: 45%;
+}
+
+.caixaInfo {
+    margin-top: 30px;
+}
+
+.infoSucesso {
+    font: normal 22px Roboto;
+    line-height: 26px;
+    letter-spacing: 0.04em;
+
+    color: #293845;
 }

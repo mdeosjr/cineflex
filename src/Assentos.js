@@ -5,9 +5,10 @@ import Assento from "./Assento.js";
 import loading from "./assets/loading.gif";
 import "./Assentos.css";
 
-function Assentos({rodapeAssentos, setRodapeAssentos}) {
+function Assentos() {
     const { idSessao } = useParams();
     const [assentos, setAssentos] = useState([]);
+    const [rodapeAssentos, setRodapeAssentos] = useState([]);
     const [nome, setNome] = useState("");
     const [CPF, setCPF] = useState("");
     let navigate = useNavigate(); 
@@ -23,12 +24,27 @@ function Assentos({rodapeAssentos, setRodapeAssentos}) {
 
     function reservarAssentos() {
         const dadosCliente = {}
-        dadosCliente.ids = assentos.filter((assento) => assento.isAvailable === 'selecionado').map(assento => assento.id)
+        const numeroAssento = []
+        const idAssentos = []
+        assentos.filter(assento => assento.isAvailable === 'selecionado')
+                .map(assento => {
+                    idAssentos.push(assento.id) 
+                    numeroAssento.push(assento.name)
+                    }
+                )
         dadosCliente.name = nome
         dadosCliente.cpf = CPF
-        
+        dadosCliente.ids = idAssentos
+        const envioSucesso = {
+            CPF, 
+            nome, 
+            numeroAssento,
+            titulo: rodapeAssentos.movie.title, 
+            hora: rodapeAssentos.name, 
+            data: rodapeAssentos.day.date
+        }
         const envio = axios.post("https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many", dadosCliente)
-        envio.then(navigate("/sucesso"))
+        envio.then(navigate("/sucesso", {state: envioSucesso}))
     }
 
     if (assentos.length === 0) {
@@ -42,7 +58,13 @@ function Assentos({rodapeAssentos, setRodapeAssentos}) {
             <div className="telaAssentos">
                 <span className="titulo">Selecione o(s) assento(s)</span>
                 <div className="assentos">
-                    {assentos.map(assento => <Assento livre={assento.isAvailable} numero={assento.name} assentos={assentos} key={assento.id}/>)}
+                    {assentos.map(assento => 
+                        <Assento 
+                            livre={assento.isAvailable} 
+                            numero={assento.name} 
+                            assentos={assentos} 
+                            key={assento.id}
+                        />)}
                 </div>
                 <div className="legenda">
                     <div className="caixaAssento">                                                                                                      
@@ -74,7 +96,7 @@ function Assentos({rodapeAssentos, setRodapeAssentos}) {
                 </div>
                 <div className="infos">
                     <p>{rodapeAssentos.movie.title}</p>
-                    <p>{rodapeAssentos.day.weekday} - {rodapeAssentos.day.date}</p>
+                    <p>{rodapeAssentos.day.weekday} - {rodapeAssentos.name}</p>
                 </div>
             </footer>
         </>
